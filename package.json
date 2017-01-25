@@ -1,0 +1,13 @@
+{
+  "name": "rekt",
+  "version": "1.0.0",
+  "description": "Rekt Slack Bot",
+  "main": "index.js",
+  "author": "Travis Williams",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "co": "^4.6.0",
+    "lodash": "^4.17.4",
+    "node-lambda": "^0.8.11"
+  }
+}
