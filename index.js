@@ -9,7 +9,9 @@ let rektList = ["Not rekt","Rekt","Really Rekt","Tyrannosaurus Rekt","Cash4Rekt.
 exports.handler = (event, context) => {
     console.log('Rekt')
 
-    let num = Math.floor(Math.random() * (76 - 0 + 1) + 0);
+    let max = rektList.length - 1
+
+    let num = Math.floor(Math.random() * (max - 0 + 1) + 0);
 
     // console.log(rektList[num])
 
