@@ -37,7 +37,7 @@ exports.handler = (event, context) => {
         let response = {
             "statusCode": 200,
             "headers": { },
-            "body": ''
+            "body": 'Success'
         };
 
         let result = yield request({
