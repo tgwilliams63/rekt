@@ -48,6 +48,6 @@ exports.handler = (event, context) => {
             "body": responseBody
         })
 
-        context.succeed(result);
+        context.succeed({"statusCode":200, "headers": {}});
     })
 };
