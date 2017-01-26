@@ -34,19 +34,27 @@ exports.handler = (event, context) => {
             }
         );
 
-        let response = {
-            "statusCode": 200,
-            "headers": { },
-            "body": 'Success'
-        };
+        if (responseURL) {
+            let response = {
+                "statusCode": 200,
+                "headers": { },
+                "body": 'Success'
+            };
+            let result = yield request({
+                "uri": responseURL,
+                "body": responseBody
+            })
 
-        let result = yield request({
-            "uri": responseURL,
-            "body": responseBody
-        })
+            console.log(result)
 
-        console.log(result)
-
-        context.succeed(response);
+            context.succeed(response);
+        } else {
+            let response = {
+                "statusCode": 500,
+                "headers": { },
+                "body": 'fail'
+            };
+            context.fail(response)
+        }
     })
 };
