@@ -34,12 +34,10 @@ exports.handler = (event, context) => {
             }
         );
 
-        // let response = {
-        //     "statusCode": 200,
-        //     "headers": { },
-        //     "uri": responseURL,
-        //     "body": responseBody
-        // };
+        let response = {
+            "statusCode": 200,
+            "headers": { },
+        };
 
         let result = yield request({
             "statusCode": 200,
@@ -48,6 +46,6 @@ exports.handler = (event, context) => {
             "body": responseBody
         })
 
-        context.succeed({"statusCode":200, "headers": {}});
+        context.succeed(response);
     })
 };
