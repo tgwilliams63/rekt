@@ -41,11 +41,11 @@ exports.handler = (event, context) => {
         };
 
         let result = yield request({
-            "statusCode": 200,
-            "headers": { },
             "uri": responseURL,
             "body": responseBody
         })
+
+        console.log(result)
 
         context.succeed(response);
     })
