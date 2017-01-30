@@ -43,3 +43,4 @@ event.json
 context.json
 yarn*
 node_modules/*
+zip.sh
