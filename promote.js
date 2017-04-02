@@ -9,9 +9,9 @@ co( function* () {
 	try {
 		var data = yield lambda.listVersionsByFunction({FunctionName: lambdaFuncName}).promise()
 
-		var newVersion = _.max(_.map(data.Versions, function(obj){
-			return obj.Version
-		}))
+		var newVersion = _.max(_.map(data.Versions, 'Version'))
+
+		// console.log(newVersion)
 
 		yield lambda.updateAlias({FunctionName: lambdaFuncName, Name : 'prod', FunctionVersion: newVersion}).promise()
 		console.log("Successfully updated alias!")
