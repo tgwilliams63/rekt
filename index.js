@@ -25,11 +25,11 @@ function* main(event,context){
     let userInfoURL = 'https://slack.com/api/users.info?token=' + token +'&user=' + userID
 
     let userInfo = yield request(userInfoURL)
-    let imageURL = JSON.parse(userInfo).user.profile.image_original
+    let imageURL = JSON.parse(userInfo.body).user.profile.image_original
     
-    console.log("Event Body: " + event.body)
-    console.log("Raw URL: " + parsedBody.response_url)
-    console.log("Response URL: " + responseURL)
+    // console.log("Event Body: " + event.body)
+    // console.log("Raw URL: " + parsedBody.response_url)
+    // console.log("Response URL: " + responseURL)
 
     let max = rektList.length - 1
 
@@ -46,12 +46,8 @@ function* main(event,context){
         "username" : userName,
         "channel" : channelID, 
         "response_type" : "in_channel",
-        "text" : ">" + text
-        "attachments" : [
-            {
-                "author_icon" : imageURL
-            }
-        ]
+        "text" : ">" + text,
+        "icon_url" : imageURL
       }
     };
 
