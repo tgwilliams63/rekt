@@ -38,9 +38,13 @@ jspm_packages
 
 #Custom:
 .env
+awsCreds.json
 deploy.env
 event.json
+eventAPI.json
 context.json
 yarn*
 node_modules/*
+test.js
+token.json
 zip.sh

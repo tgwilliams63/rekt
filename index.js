@@ -27,7 +27,8 @@ function* main(event,context){
     let userInfo = yield request(userInfoURL)
     let imageURL = JSON.parse(userInfo.body).user.profile.image_original
     
-    // console.log("Event Body: " + event.body)
+    console.log("Event Body: " + event.body)
+    console.log("Parsed Body: " + parsedBody)
     // console.log("Raw URL: " + parsedBody.response_url)
     // console.log("Response URL: " + responseURL)
 
@@ -51,7 +52,7 @@ function* main(event,context){
       }
     };
 
-    request(options, function (error, response, body) {
+    yield request(options, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         response = {
             "statusCode": 200,
